@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.regbody,.homebody{
+    height:140vh;
+}
+.parenteye,.parenteye1{
+    position: relative;
+}
+.eye{
+    position: absolute;
+    top: 2.6rem;
+    right: 0.5rem;
+}
+.eye1{
+    position: absolute;
+    top: 2.7rem;
+    right: 1.5rem;
+}
+@media screen and (max-width: 576px){
+    .resp-sm{
+        
+        margin: 0px 1.4rem 0px 1.4rem;
+    }
+}
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Font%2520Awesome/css/all.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body class="regbody">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <h3 class="navbar-brand">
+                Rick's address book
+            </h3>
+        </div>
+    </nav>
+    <h2 class="text-center mt-5">Registration</h2>
+    <div class="container mt-5 border border-light">
+        <form action="insert.php" method="post">
+            <h4 class="bg-success py-2 text-white text-center">Personal Details</h4>
+
+            <div class="row px-5 mt-3">
+                <div class="col-sm">
+                    <label for="resname">Name</label>
+                    <input type="text" class="form-control" name="resname" id="resname" required>
+                </div>
+                <div class="col-sm">
+                    <label for="phoneno">Phone Number</label>
+                    <input type="text" class="form-control" pattern="^[6,7,8,9]{1}[0-9]{9}" name="phoneno" id="phoneno" required>
+                </div>
+                <div class="col-sm">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+
+            </div>
+            <div class="row px-5 mt-3">
+                <div class="col-sm">
+                    <label for="sgno">Security/Guardian number</label>
+                    <input type="text" pattern="^[6,7,8,9]{1}[0-9]{9}" name="sgno" class="form-control" id="sgno" required>
+                </div>
+                <div class="col-sm">
+                    <label for="nocr">Number of co-residents (Upto 5)</label>
+                    <input type="number" min="0" max="5" name="nocr" class="form-control" id="nocr" required>
+                    <small class="form-text text-muted mt-1">Enter no of co-residents click enter to fill their names</small>
+                </div>
+                <div class="col-sm align-self-center">
+                    <button type="button" class="btn btn-primary mr-5 px-4 enter">Enter</button>
+                    <button type="button" class="btn btn-danger px-4 reset">Reset</button>
+                </div>
+            </div>
+            <div class="row px-5 mt-3 resname">
+                <input type="hidden" name="h1" id="h11" value="">
+                <input type="hidden" name="h2" id="h22" value="">
+                <input type="hidden" name="h3" id="h33" value="">
+                <input type="hidden" name="h4" id="h44" value="">
+                <input type="hidden" name="h5" id="h55" value="">
+            </div>
+            <div class="row px-5">
+                <div class="col">
+                    <label for="address">Address</label>
+                    <textarea name="address" class="form-control" id="address" required></textarea>
+                </div>
+            </div>
+
+            <h4 class="bg-success py-2 text-white text-center mt-5">Vechicle Details</h4>
+            <div class="row px-5 mt-3">
+                <div class="col text-center">
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="2wheeler" value="yes" id="2wheeler" class="form-check-input">
+                        <label for="2wheeler" class="form-check-label">Having 2 Wheeler?</label>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="4wheeler" value="yes" id="4wheeler" class="form-check-input">
+                        <label for="4wheeler" class="form-check-label">Having 4 Wheeler?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="px-5 mt-5 2wheeler">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="2wm">2 wheeler name/model</label>
+                        <input type="text" class="form-control" name="2wm" id="2wm">
+                    </div>
+                    <div class="col-sm">
+                        <label for="2wregno">2 wheeler register number</label>
+                        <input type="text" class="form-control" name="2wregno" id="2wregno">
+                    </div>
+                    <div class="col-sm">
+                        <label for="color">2 wheeler color</label>
+                        <input type="text" class="form-control" name="color" id="color">
+                    </div>
+
+                </div>
+            </div>
+            <div class="px-5 mt-5 4wheeler">
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="4wm">4 wheeler name/model</label>
+                        <input type="text" class="form-control" name="4wm" id="4wm">
+                    </div>
+                    <div class="col-sm">
+                        <label for="4wregno">4 wheeler register number</label>
+                        <input type="text" class="form-control" name="4wregno" id="4wregno">
+                    </div>
+                    <div class="col-sm">
+                        <label for="4color">4 wheeler color</label>
+                        <input type="text" class="form-control" name="4color" id="4color">
+                    </div>
+
+                </div>
+            </div>
+            <h4 class="bg-success py-2 mt-5 text-white text-center mt-5">Login Details(Auto Generated)</h4>
+            <div class="row px-5 mt-3">
+                <div class="col-sm">
+                    <label for="usid">User Id</label>
+                    <input type="text" name="usid" value="" class="form-control" id="usid" readonly>
+                </div>
+                <div class="col-sm">
+                    <label for="password">Password</label>
+                    <input type="text" name="password" value="" class="form-control" id="password" readonly>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center mt-5">
+                <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var count = 1;
+
+            $(".2wheeler").hide();
+            $(".4wheeler").hide();
+
+            $(".enter").click(function() {
+                var nocr = $("#nocr").val();
+                while (count <= nocr) {
+                    $(".resname").append(`<div class="col-sm gen"><label for="cores${count.toString()}">Name of co-resident ${count.toString()}</label><input type="text" name="cores${count.toString()}" class="form-control" id="cores${count.toString()}"></div>`);
+                    count = count + 1;
+                }
+                count = 1;
+            });
+
+            $(".reset").click(function() {
+                $(".gen").remove();
+            });
+            
+            $(document).on("keyup","#cores1",function(){
+                var cr1 = $("#cores1").val();
+                $("#h11").val(cr1);
+            });
+            
+            $(document).on("keyup","#cores2",function(){
+                var cr2 = $("#cores2").val();
+                $("#h22").val(cr2);
+            });
+            
+            $(document).on("keyup","#cores3",function(){
+                var cr3 = $("#cores3").val();
+                $("#h33").val(cr3);
+            });
+            
+            $(document).on("keyup","#cores4",function(){
+                var cr4 = $("#cores4").val();
+                $("#h44").val(cr4);
+            });
+            
+            $(document).on("keyup","#cores5",function(){
+                var cr5 = $("#cores5").val();
+                $("#h55").val(cr5);
+            });
+            
+            console.log($("#h11").val());
+            console.log($("#h22").val());
+            console.log($("#h33").val());
+            console.log($("#h44").val());
+            console.log($("#h55").val());
+            
+            
+            
+
+            $("#2wheeler").click(function() {
+                if ($("#2wheeler").prop("checked", true)) {
+                    $(".2wheeler").show();
+                } else {
+                    $(".2wheeler").hide();
+                    $("#2wheeler").val("No");
+                }
+            });
+
+            $("#4wheeler").click(function() {
+                if ($("#4wheeler").prop("checked", true)) {
+                    $(".4wheeler").show();
+                } else {
+                    $(".4wheeler").hide();
+                    $("#4wheeler").val("No");
+                }
+            });
+            
+            var randuid = Math.floor(Math.random() * 999999) + 100000;
+            var i;
+            $("#usid").val(randuid);
+            
+            function generateP() {
+                var pass = '';
+                var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+                for (i = 1; i <= 8; i++) {
+                    var char = Math.floor(Math.random() * str.length + 1);
+                    
+                    pass += str.charAt(char);
+                }
+
+                return pass;
+            }
+            $("#password").val(generateP());
+        });
+    </script>
+</body></html>
